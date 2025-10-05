@@ -38,15 +38,19 @@ class IndexController extends Controller
         $arricao = strtoupper($request->query('arricao'));
 
         if (!$depicao || !$arricao) {
-            return response()->json(['error' => 'Both ICAO codes are required'], 400);
-        }
+		    flash()->error('Both ICAO codes are required');         
+		    return back(); 
+		    // response()->json(['error' => 'Both ICAO codes are required'], 400);
+		}
 
         $dep = $this->airportRepo->findWhere(['icao' => $depicao])->first();
         $arr = $this->airportRepo->findWhere(['icao' => $arricao])->first();
 
         if (!$dep || !$arr) {
-            return response()->json(['error' => 'Airport not found'], 404);
-        }
+		    flash()->error('Airport not found');         
+		    return back(); 
+		    // return response()->json(['error' => 'Airport not found'], 404);
+		}
 
         $distance = $this->haversineGreatCircleDistance(
             $dep->lat, $dep->lon,
