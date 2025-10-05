@@ -21,8 +21,9 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        $airports = $this->airportRepo->all(); // get all airports
-		return view('distancecal::index', compact('airports'));
+        return view('distancecal::index', [
+            'airports' => [],
+        ]);
     }
 
    protected $airportRepo;
