@@ -5,27 +5,13 @@
 @section('content')
 <div class="row mt-5">
     <div class="form-group col-md-6">
-    <label>Departure ICAO</label>
-    <select id="depicao" class="form-control airport-select" name="depicao">
-        <option value="">Select Departure</option>
-        @foreach($airports as $airport)
-            <option value="{{ $airport->icao }}">
-                {{ $airport->icao }} - {{ $airport->name }}
-            </option>
-        @endforeach
-    </select>
-	</div>
-	<div class="form-group col-md-6">
-		<label>Arrival ICAO</label>
-		<select id="arricao" class="form-control airport-select" name="arricao">
-			<option value="">Select Arrival</option>
-			@foreach($airports as $airport)
-				<option value="{{ $airport->icao }}">
-					{{ $airport->icao }} - {{ $airport->name }}
-				</option>
-			@endforeach
-		</select>
-	</div>
+      <label>Departure ICAO</label>
+      <select style="width: 100%;" class="form-control airport_search" name="depicao" id="depicao"></select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Arrival ICAO</label>
+      <select style="width: 100%;" class="form-control airport_search" name="arricao" id="arricao"></select>
+    </div>
 	<div class="form-group col-md-12">
 		<label>&nbsp;</label>
 		 <button type="button" class="form-control btn btn-primary" onclick="calcDistance()">Calculate Distance</button>
@@ -145,4 +131,5 @@ $(document).ready(function () {
 });
 
 </script>
+@include('scripts.airport_search')
 @endsection
