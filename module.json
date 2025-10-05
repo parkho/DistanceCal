@@ -1,0 +1,16 @@
+{
+    "name": "DistanceCal",
+    "alias": "distancecal",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\DistanceCal\\Providers\\AppServiceProvider",
+        "Modules\\DistanceCal\\Providers\\EventServiceProvider",
+        "Modules\\DistanceCal\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
