@@ -6,4 +6,5 @@ Install:
 3. Go to `admin/maintenance` and click on `clear All cache`
 4. Enjoy!
 
+![Video Preview](discal.gif)
 
